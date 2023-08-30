@@ -103,6 +103,7 @@ function Library:New(properties)
 	Header.BackgroundColor3 = Library.Theme.BackgroundLight
 	Header.BorderColor3 = Library.Theme.Border
 	Header.Size = UDim2.new(0, 622, 0, 30)
+	Header.ZIndex = 30000
 
 	Background.Name = "Background"
 	Background.Parent = Canvas
@@ -182,6 +183,7 @@ function Library:New(properties)
 	ButtonsFrame.Size = UDim2.new(0, 622,0, 30)
 	ButtonsFrame.Position = UDim2.new(0, 0, 0, 0)
 	ButtonsFrame.Parent = Header
+	ButtonsFrame.ZIndex = 30001
 
 	UILLButtons.Name = "UILLButtons"
 	UILLButtons.Parent = ButtonsFrame
@@ -217,6 +219,7 @@ function Library:New(properties)
 		Tab.Text = ""
 		Tab.TextColor3 = Color3.fromRGB(0, 0, 0)
 		Tab.TextSize = 14.000
+		Tab.ZIndex = 30003
 
 		UILLTab.Name = "UILLTab"
 		UILLTab.Parent = Tab
@@ -237,6 +240,7 @@ function Library:New(properties)
 		TabText.Text = text
 		TabText.TextColor3 = Color3.fromRGB(204, 204, 204)
 		TabText.TextSize = 14.000
+		TabText.ZIndex = 30005
 
 		local newTabButtonSize = game:GetService("TextService"):GetTextSize(TabText.Text, TabText.TextSize, TabText.Font, Vector2.new(math.huge, math.huge))
 		Tab.Size = UDim2.new(0, 7 + newTabButtonSize.X, 0, 25)
@@ -439,7 +443,7 @@ function Library:New(properties)
 						SectionBG.Visible = true
 						Section.Size = SectionBG.Size + UDim2.new(0, 0, 0, 20)
 						local UpdateColumn = SectionSize(UILLColumn1)
-						Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 7 + UIPColumn1.PaddingTop.Offset)
+						Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 15 + UIPColumn1.PaddingTop.Offset)
 					end)
 
 					---------------------------------------------------------- UTILITIES ----------------------------------------------------------
@@ -613,7 +617,7 @@ function Library:New(properties)
 						Section.Size = SectionBG.Size + UDim2.new(0, 0, 0, 20)
 						
 						local UpdateColumn = SectionSize(UILLColumn1)
-						Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 7 + UIPColumn1.PaddingTop.Offset)
+						Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 15 + UIPColumn1.PaddingTop.Offset)
 						
 						local hopster = option
 
@@ -753,7 +757,7 @@ function Library:New(properties)
 							Section.Size = SectionBG.Size + UDim2.new(0, 0, 0, 20)
 							
 							local UpdateColumn = SectionSize(UILLColumn1)
-							Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 7 + UIPColumn1.PaddingTop.Offset)
+							Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 15 + UIPColumn1.PaddingTop.Offset)
 							
 							if option.flag and option.flag ~= "" then
 								Library.Flags[option.flag] = option.key.Name
@@ -972,7 +976,7 @@ function Library:New(properties)
 							Section.Size = SectionBG.Size + UDim2.new(0, 0, 0, 20)
 							
 							local UpdateColumn = SectionSize(UILLColumn1)
-							Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 7 + UIPColumn1.PaddingTop.Offset)
+							Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 15 + UIPColumn1.PaddingTop.Offset)
 
 							return option;
 						end
@@ -1048,7 +1052,7 @@ function Library:New(properties)
 						Section.Size = SectionBG.Size + UDim2.new(0, 0, 0, 20)
 						
 						local UpdateColumn = SectionSize(UILLColumn1)
-						Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 7 + UIPColumn1.PaddingTop.Offset)
+						Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 15 + UIPColumn1.PaddingTop.Offset)
 
 						return option;
 					end
@@ -1119,7 +1123,7 @@ function Library:New(properties)
 						Section.Size = SectionBG.Size + UDim2.new(0, 0, 0, 20)
 						
 						local UpdateColumn = SectionSize(UILLColumn1)
-						Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 7 + UIPColumn1.PaddingTop.Offset)
+						Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 15 + UIPColumn1.PaddingTop.Offset)
 
 						return option;
 
@@ -1309,7 +1313,7 @@ function Library:New(properties)
 						Section.Size = SectionBG.Size + UDim2.new(0, 0, 0, 20)
 						
 						local UpdateColumn = SectionSize(UILLColumn1)
-						Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 7 + UIPColumn1.PaddingTop.Offset)
+						Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 15 + UIPColumn1.PaddingTop.Offset)
 						
 						if option.flag and option.flag ~= "" then
 							Library.Flags[option.flag] = option.key.Name
@@ -1376,7 +1380,7 @@ function Library:New(properties)
 						Section.Size = SectionBG.Size + UDim2.new(0, 0, 0, 20)
 						
 						local UpdateColumn = SectionSize(UILLColumn1)
-						Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 7 + UIPColumn1.PaddingTop.Offset)
+						Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 15 + UIPColumn1.PaddingTop.Offset)
 
 						return option;
 					end
@@ -1600,7 +1604,7 @@ function Library:New(properties)
 						Section.Size = SectionBG.Size + UDim2.new(0, 0, 0, 20)
 						
 						local UpdateColumn = SectionSize(UILLColumn1)
-						Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 7 + UIPColumn1.PaddingTop.Offset)
+						Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 15 + UIPColumn1.PaddingTop.Offset)
 
 						return option;
 
@@ -2124,7 +2128,7 @@ function Library:New(properties)
 						Section.Size = SectionBG.Size + UDim2.new(0, 0, 0, 20)
 						
 						local UpdateColumn = SectionSize(UILLColumn1)
-						Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 7 + UIPColumn1.PaddingTop.Offset)
+						Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 15 + UIPColumn1.PaddingTop.Offset)
 
 						return option;
 
@@ -2245,7 +2249,7 @@ function Library:New(properties)
 						Section.Size = SectionBG.Size + UDim2.new(0, 0, 0, 20)
 						
 						local UpdateColumn = SectionSize(UILLColumn1)
-						Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 7 + UIPColumn1.PaddingTop.Offset)
+						Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 15 + UIPColumn1.PaddingTop.Offset)
 
 						function option:SetValue(str)
 							option.value = tostring(str)
@@ -2276,7 +2280,7 @@ function Library:New(properties)
 						Section.Size = SectionBG.Size + UDim2.new(0, 0, 0, 20)
 						
 						local UpdateColumn = SectionSize(UILLColumn1)
-						Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 7 + UIPColumn1.PaddingTop.Offset)
+						Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 15 + UIPColumn1.PaddingTop.Offset)
 					end
 
 					function Utilities:AddColor(option)
@@ -2777,20 +2781,20 @@ function Library:New(properties)
 						Section.Size = SectionBG.Size + UDim2.new(0, 0, 0, 20)
 						
 						local UpdateColumn = SectionSize(UILLColumn1)
-						Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 7 + UIPColumn1.PaddingTop.Offset)
+						Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 15 + UIPColumn1.PaddingTop.Offset)
 						
 						return option;
 
 					end
 					
 					local UpdateColumn = SectionSize(UILLColumn1)
-					Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 7 + UIPColumn1.PaddingTop.Offset)
+					Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 15 + UIPColumn1.PaddingTop.Offset)
 
 					return Utilities;
 
 				end
 				local UpdateColumn = SectionSize(UILLColumn1)
-				Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 7 + UIPColumn1.PaddingTop.Offset)
+				Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 15 + UIPColumn1.PaddingTop.Offset)
 				return SubSection;
 
 			end
