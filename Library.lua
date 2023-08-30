@@ -2741,10 +2741,16 @@ function Library:New(properties)
 						local UpdateSection = SectionSize(UILLSubSection)
 						SectionBG.Size = UDim2.new(0, SectionBG.Size.X.Offset, 0, UpdateSection + 7 + UIPSubSection.PaddingTop.Offset)
 						Section.Size = SectionBG.Size + UDim2.new(0, 0, 0, 20)
-
+						
+						local UpdateColumn = SectionSize(UILLColumn1)
+						Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 7 + UIPColumn1.PaddingTop.Offset)
+						
 						return option;
 
 					end
+					
+					local UpdateColumn = SectionSize(UILLColumn1)
+					Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 7 + UIPColumn1.PaddingTop.Offset)
 
 					return Utilities;
 
