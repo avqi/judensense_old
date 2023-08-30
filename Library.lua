@@ -2749,10 +2749,8 @@ function Library:New(properties)
 					return Utilities;
 
 				end
-
 				local UpdateColumn = SectionSize(UILLColumn1)
 				Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 7 + UIPColumn1.PaddingTop.Offset)
-
 				return SubSection;
 
 			end
@@ -2829,7 +2827,7 @@ function Library:CreateConfig(name)
 end
 
 function Library:LoadConfig(name)
-	local cfg = game:GetService("HttpService"):JSONDecode(Config)
+	local cfg = game:GetService("HttpService"):JSONDecode(name)
 	for i,v in pairs(cfg) do
 		print(i,v )
 		if Library.Items[i].utilitytype == "color" then
