@@ -438,7 +438,8 @@ function Library:New(properties)
 						end
 						SectionBG.Visible = true
 						Section.Size = SectionBG.Size + UDim2.new(0, 0, 0, 20)
-
+						local UpdateColumn = SectionSize(UILLColumn1)
+						Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 7 + UIPColumn1.PaddingTop.Offset)
 					end)
 
 					---------------------------------------------------------- UTILITIES ----------------------------------------------------------
@@ -524,7 +525,7 @@ function Library:New(properties)
 						btnToggle.TextSize = 14.000
 
 						UISToggle.Parent = ToggleFrame
-						UISToggle.Color = Color3. fromRGB(36, 36, 50)
+						UISToggle.Color = Library.Theme.Border
 
 						UIListLayout.Parent = ignoreToggle
 						UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
@@ -2752,7 +2753,9 @@ function Library:New(properties)
 				return SubSection;
 
 			end
-
+			
+			local UpdateColumn = SectionSize(UILLColumn1)
+			Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 7 + UIPColumn1.PaddingTop.Offset)
 			return SectionHandler;
 
 		end
