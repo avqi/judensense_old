@@ -2750,12 +2750,13 @@ function Library:New(properties)
 
 				end
 
+				local UpdateColumn = SectionSize(UILLColumn1)
+				Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 7 + UIPColumn1.PaddingTop.Offset)
+
 				return SubSection;
 
 			end
 			
-			local UpdateColumn = SectionSize(UILLColumn1)
-			Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 7 + UIPColumn1.PaddingTop.Offset)
 			return SectionHandler;
 
 		end
