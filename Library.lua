@@ -980,6 +980,447 @@ function Library:New(properties)
 
 							return option;
 						end
+						
+						function option:AddColor(option)
+							option = typeof(option) == "table" and option or {}
+							option.text = option.text or "New Color" or "nil"
+							option.color = option.color or Color3.fromRGB(255, 255, 255)
+							option.transparency = typeof(option.transparency) == "number" and option.transparency or typeof(option.transparency) == "boolean" and option.transparency or false
+							option.flag = option.flag or option.text
+							option.callback = option.callback or function() end
+							option.utilitytype = "color"
+							
+							local addonColor = Instance.new("TextButton")
+
+							
+							addonColor.Name = "addonColor"
+							addonColor.Parent = toggleAddonsFrame
+							addonColor.BackgroundColor3 = Color3.fromRGB(255, 181, 62)
+							addonColor.BorderColor3 = Color3.fromRGB(0, 0, 0)
+							addonColor.BorderSizePixel = 0
+							addonColor.Size = UDim2.new(0, 22, 0, 12)
+							addonColor.AutoButtonColor = false
+							addonColor.Font = Enum.Font.SourceSans
+							addonColor.Text = ""
+							addonColor.TextColor3 = Color3.fromRGB(0, 0, 0)
+							addonColor.TextSize = 14.000
+							addonColor.ZIndex = 1005
+
+							UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(186, 186, 186))}
+							UIGradient.Rotation = 90
+							UIGradient.Parent = addonColor
+
+
+							local UISNN = Instance.new("UIStroke")
+							UISNN.Parent = addonColor
+							UISNN.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
+							UISNN.Color = Library.Theme.Border
+
+
+							--- COCK
+
+							local AddonColor = Instance.new("Frame")
+							local Display = Instance.new("Frame")
+							local ColorOutput = Instance.new("TextBox")
+							local UIPadding = Instance.new("UIPadding")
+							local Schema = Instance.new("ImageButton")
+							local Frame = Instance.new("Frame")
+							local Frame2 = Instance.new("Frame")
+							local UICorner = Instance.new("UICorner")
+							local HUE = Instance.new("ImageButton")
+							local Frame_2 = Instance.new("Frame")
+							local TRANS = Instance.new("ImageButton")
+							local Frame_3 = Instance.new("Frame")
+
+							--Properties:
+
+							AddonColor.Name = "AddonColor"
+							AddonColor.Parent = addonColor
+							AddonColor.BackgroundColor3 = Library.Theme.BackgroundDark
+							AddonColor.BorderColor3 = Library.Theme.Border
+							AddonColor.Position = UDim2.new(-6.72681761, 0, 1.5, 0)
+							AddonColor.Size = UDim2.new(0, 170, 0, 160)
+							AddonColor.ZIndex = 1000
+							AddonColor.Visible = false
+
+							Display.Name = "Display"
+							Display.Parent = AddonColor
+							Display.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+							Display.BorderColor3 = Color3.fromRGB(0, 0, 0)
+							Display.BorderSizePixel = 0
+							Display.Position = UDim2.new(0.0470588244, 0, 0.862500012, 0)
+							Display.Size = UDim2.new(0, 15, 0, 15)
+							Display.ZIndex = 1005
+
+							ColorOutput.Name = "ColorOutput"
+							ColorOutput.Parent = AddonColor
+							ColorOutput.BackgroundColor3 = Library.Theme.BackgroundDark
+							ColorOutput.BorderColor3 = Library.Theme.Border
+							ColorOutput.Position = UDim2.new(0.164705887, 0, 0.862500012, 0)
+							ColorOutput.Size = UDim2.new(0, 134, 0, 15)
+							ColorOutput.ClearTextOnFocus = false
+							ColorOutput.Font = Enum.Font.Jura
+							ColorOutput.PlaceholderColor3 = Color3.fromRGB(178, 178, 178)
+							ColorOutput.Text = "255, 255, 255, 1"
+							ColorOutput.TextColor3 = Color3.fromRGB(255, 255, 255)
+							ColorOutput.TextSize = 14.000
+							ColorOutput.TextXAlignment = Enum.TextXAlignment.Left
+							ColorOutput.ZIndex = 1001
+
+							UIPadding.Parent = ColorOutput
+							UIPadding.PaddingLeft = UDim.new(0, 5)
+
+							Schema.Name = "Schema"
+							Schema.Parent = AddonColor
+							Schema.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+							Schema.BorderColor3 = Color3.fromRGB(0, 0, 0)
+							Schema.BorderSizePixel = 0
+							Schema.Position = UDim2.new(0.0470588244, 0, 0.0500000007, 0)
+							Schema.Size = UDim2.new(0, 125, 0, 125)
+							Schema.AutoButtonColor = false
+							Schema.Image = "rbxassetid://2615689005"
+							Schema.ZIndex = 1001
+
+							Frame.Parent = Schema
+							Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+							Frame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+							Frame.BorderSizePixel = 0
+							Frame.Position = UDim2.new(0.791999996, 0, 0.656000018, 0)
+							Frame.Size = UDim2.new(0, 0, 0, 0)
+							Frame.ZIndex = 1002
+
+							Frame2.Parent = Schema
+							Frame2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+							Frame2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+							Frame2.BorderSizePixel = 0
+							Frame2.Size = UDim2.new(0, 5, 0, 5)
+							Frame2.Position = UDim2.new(0, -(Frame2.AbsoluteSize.X/2), 0, -(Frame2.AbsoluteSize.Y/2))
+							Frame2.ZIndex = 1002
+
+							UICorner.CornerRadius = UDim.new(0, 9999)
+							UICorner.Parent = Frame
+
+							HUE.Name = "HUE"
+							HUE.Parent = AddonColor
+							HUE.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+							HUE.BorderColor3 = Color3.fromRGB(0, 0, 0)
+							HUE.BorderSizePixel = 0
+							HUE.Position = UDim2.new(0.818000019, 0, 0.0500000007, 0)
+							HUE.Size = UDim2.new(0, 10, 0, 125)
+							HUE.AutoButtonColor = false
+							HUE.Image = "rbxassetid://2615692420"
+							HUE.ZIndex = 1001
+
+
+							TRANS.Name = "TRANS"
+							TRANS.Parent = AddonColor
+							TRANS.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+							TRANS.BorderColor3 = Color3.fromRGB(0, 0, 0)
+							TRANS.BorderSizePixel = 0
+							TRANS.Position = UDim2.new(0.894999981, 0, 0.0500000007, 0)
+							TRANS.Size = UDim2.new(0, 10, 0, 125)
+							TRANS.AutoButtonColor = false
+							TRANS.Image = "http://www.roblox.com/asset/?id=14458264222"
+							TRANS.ImageRectSize = Vector2.new(100, 1000)
+							TRANS.ScaleType = Enum.ScaleType.Crop
+							TRANS.ZIndex = 1001
+
+							Frame_3.Parent = TRANS
+							Frame_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+							Frame_3.BorderColor3 = Color3.fromRGB(0, 0, 0)
+							Frame_3.BorderSizePixel = 0
+							Frame_3.Size = UDim2.new(0, 10, 0, 1)
+							Frame_3.ZIndex = 1002
+
+							Frame_2.Parent = HUE
+							Frame_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+							Frame_2.BorderColor3 = Color3.fromRGB(0, 0, 0)
+							Frame_2.BorderSizePixel = 0
+							Frame_2.Size = UDim2.new(0, 10, 0, 1)
+							Frame_2.ZIndex = 1002
+
+							local ColorVal = Instance.new("BoolValue")
+							ColorVal.Value = false
+							ColorVal.Name = "OpenedVal"
+							ColorVal.Parent = AddonColor
+
+							addonColor.MouseEnter:Connect(function()
+								UISNN.Color = Library.Theme.Accent
+							end)
+
+							addonColor.MouseLeave:Connect(function()
+								if ColorVal.Value == true then
+									UISNN.Color = Library.Theme.Accent
+								else
+									UISNN.Color = Library.Theme.Border
+								end
+							end)
+
+							if (not option.transparency) then
+								AddonColor.Size = UDim2.new(0, 155, 0, 160)
+								AddonColor.Position = UDim2.new(-6.055, 0,1.5, 0)
+
+								Display.Position = UDim2.new(0.054, 0, 0.856, 0)
+								Schema.Position = UDim2.new(0.054, 0, 0.044, 0)
+								TRANS:Destroy()
+								HUE.Position = UDim2.new(0.885, 0, 0.044, 0)
+								ColorOutput.Position = UDim2.new(0.171, 0, 0.856, 0)
+								ColorOutput.Size = UDim2.new(0, 120, 0, 15)
+							else
+								Display.BackgroundTransparency = option.transparency
+								addonColor.BackgroundTransparency = option.transparency
+							end
+
+							local white, black = Color3.new(1, 1, 1), Color3.new(0, 0, 0)
+							local colors = {Color3.new(1, 0, 0), Color3.new(1, 1, 0), Color3.new(0, 1, 0), 
+								Color3.new(0, 1, 1), Color3.new(0, 0, 1), Color3.new(1, 0, 1), Color3.new(1, 0, 0)}
+
+							local Mouse = game.Players.LocalPlayer:GetMouse()
+							local UserInputService = game:GetService("UserInputService")
+
+							local textured, textured1
+							if option.transparency then
+								textured, textured1 = Instance.new("ImageLabel", addonColor), Instance.new("ImageLabel", Display)
+								textured.Position = addonColor.Position;
+								textured.Size = addonColor.Size; textured1.Size = Display.Size
+								textured.BorderSizePixel = 0; textured1.BorderSizePixel = 0;
+								textured.Image = "rbxassetid://14490863673"; textured1.Image = "rbxassetid://14490863673"
+								textured.ImageRectSize = Vector2.new(150, 100); textured1.ImageRectSize = Vector2.new(100, 100)
+								textured.ZIndex = 988; textured1.ZIndex = 1002
+
+								local r,g,b = math.floor((option.color.R*255) + 0.5),math.floor((option.color.G*255) + 0.5),math.floor((option.color.B*255) + 0.5)
+								ColorOutput.Text = string.format("%0.f, %0.f, %0.f, %.2f", r, g, b, option.transparency)
+								addonColor.BackgroundColor3 = option.color
+								Display.BackgroundColor3 = option.color
+								Library.Flags[option.flag] = {{option.color.R*255, option.color.G*255, option.color.B*255}, option.transparency}
+							else
+								local r,g,b = math.floor((option.color.R*255) + 0.5),math.floor((option.color.G*255) + 0.5),math.floor((option.color.B*255) + 0.5)
+								Library.Flags[option.flag] =  {{option.color.R*255, option.color.G*255, option.color.B*255}}
+								ColorOutput.Text = string.format("%0.f, %0.f, %0.f", r, g, b)
+							end
+
+
+							addonColor.BackgroundColor3 = option.color
+							Display.BackgroundColor3 = option.color
+							addonColor.ZIndex = 999
+							Display.ZIndex = 1005
+
+							Schema.MouseButton1Down:Connect(function()
+								local X, Y = Mouse.X, Mouse.Y
+								Frame.Position = UDim2.new(0, math.clamp((X - Schema.AbsolutePosition.X), 0, (Schema.AbsoluteSize.X)), 0, math.clamp((Y - Schema.AbsolutePosition.Y), 0, (Schema.AbsoluteSize.Y)))
+								Frame2.Position = UDim2.new(0, math.clamp((X - Schema.AbsolutePosition.X-(Frame2.AbsoluteSize.X/2)), 0, (Schema.AbsoluteSize.X-Frame2.AbsoluteSize.X)), 0, math.clamp((Y - Schema.AbsolutePosition.Y-(Frame2.AbsoluteSize.Y/2)), 0, (Schema.AbsoluteSize.Y-Frame2.AbsoluteSize.Y)))
+
+								local xP, yP = (Schema.Frame.AbsolutePosition.X - Schema.AbsolutePosition.X) / Schema.AbsoluteSize.X, (Schema.Frame.AbsolutePosition.Y - Schema.AbsolutePosition.Y) / Schema.AbsoluteSize.Y
+								if not (xP < 0 or xP > 1 or yP < 0 or yP > 1) then
+									local Output = white:Lerp(Schema.BackgroundColor3, xP):Lerp(black, yP)
+									Display.BackgroundColor3 = Output
+									local r,g,b = math.floor((Output.R*255) + 0.5),math.floor((Output.G*255) + 0.5),math.floor((Output.B*255) + 0.5)
+									option.color = Color3.fromRGB(r,g,b)
+									addonColor.BackgroundColor3 = option.color
+									if option.transparency then
+										ColorOutput.Text = string.format("%0.f, %0.f, %0.f, %.2f", r, g, b, option.transparency)
+										option.callback(option.color, option.transparency)
+										Library.Flags[option.flag] = {{option.color.R*255, option.color.G*255, option.color.B*255}, option.transparency}
+									else
+										ColorOutput.Text = string.format("%0.f, %0.f, %0.f", r, g, b)
+										option.callback(option.color)
+										Library.Flags[option.flag] =  {{option.color.R*255, option.color.G*255, option.color.B*255}}
+									end
+								end
+
+								schemaconnection = Mouse.Move:Connect(function()
+									local X, Y = Mouse.X, Mouse.Y
+									Frame.Position = UDim2.new(0, math.clamp((X - Schema.AbsolutePosition.X), 0, (Schema.AbsoluteSize.X)), 0, math.clamp((Y - Schema.AbsolutePosition.Y), 0, (Schema.AbsoluteSize.Y)))
+									Frame2.Position = UDim2.new(0, math.clamp((X - Schema.AbsolutePosition.X-(Frame2.AbsoluteSize.X/2)), 0, (Schema.AbsoluteSize.X-Frame2.AbsoluteSize.X)), 0, math.clamp((Y - Schema.AbsolutePosition.Y-(Frame2.AbsoluteSize.Y/2)), 0, (Schema.AbsoluteSize.Y-Frame2.AbsoluteSize.Y)))
+
+									local xP, yP = (Schema.Frame.AbsolutePosition.X - Schema.AbsolutePosition.X) / Schema.AbsoluteSize.X, (Schema.Frame.AbsolutePosition.Y - Schema.AbsolutePosition.Y) / Schema.AbsoluteSize.Y
+									if not (xP < 0 or xP > 1 or yP < 0 or yP > 1) then
+										local Output = white:Lerp(Schema.BackgroundColor3, xP):Lerp(black, yP)
+										Display.BackgroundColor3 = Output
+										local r,g,b = math.floor((Output.R*255) + 0.5),math.floor((Output.G*255) + 0.5),math.floor((Output.B*255) + 0.5)
+										option.color = Color3.fromRGB(r,g,b)
+										addonColor.BackgroundColor3 = option.color
+										if option.transparency then
+											ColorOutput.Text = string.format("%0.f, %0.f, %0.f, %.2f", r, g, b, option.transparency)
+											option.callback(option.color, option.transparency)
+											Library.Flags[option.flag] = {{option.color.R*255, option.color.G*255, option.color.B*255}, option.transparency}
+										else
+											ColorOutput.Text = string.format("%0.f, %0.f, %0.f", r, g, b)
+											option.callback(option.color)
+											Library.Flags[option.flag] =  {{option.color.R*255, option.color.G*255, option.color.B*255}}
+										end
+									end
+
+								end)
+
+								schemarelease = UserInputService.InputEnded:Connect(function(input, gameProcessedEvent)
+									if input.UserInputType == Enum.UserInputType.MouseButton1 then
+										if schemaconnection then
+											schemaconnection:Disconnect()
+											schemarelease:Disconnect()
+										end
+									end
+								end)
+							end)
+
+							HUE.MouseButton1Down:Connect(function()
+								local X, Y = Mouse.X, Mouse.Y
+								local P = (Y-HUE.AbsolutePosition.Y)/HUE.AbsoluteSize.Y
+								local Calc = math.max(1, math.min(7, 
+									math.floor(((P*7+0.5)*100))/100 
+									))
+								local startC = colors[math.floor(Calc)] ; local endC = colors[math.ceil(Calc)]
+								Schema.BackgroundColor3 = startC:lerp(endC, Calc-math.floor(Calc)) or Color3.new(0, 0, 0)
+								HUE.Frame.Position = UDim2.new(0, 0, 0, math.clamp( Y - HUE.AbsolutePosition.Y, 0, HUE.AbsoluteSize.Y-1 ))
+
+								local xP, yP = (Schema.Frame.AbsolutePosition.X - Schema.AbsolutePosition.X) / Schema.AbsoluteSize.X, (Schema.Frame.AbsolutePosition.Y - Schema.AbsolutePosition.Y) / Schema.AbsoluteSize.Y
+								local Output = white:Lerp(Schema.BackgroundColor3, xP):Lerp(black, yP)
+								Display.BackgroundColor3 = Output
+								local r,g,b = math.floor((Output.R*255) + 0.5),math.floor((Output.G*255) + 0.5),math.floor((Output.B*255) + 0.5)
+								option.color = Color3.fromRGB(r,g,b)
+								addonColor.BackgroundColor3 = option.color
+								if option.transparency then
+									ColorOutput.Text = string.format("%0.f, %0.f, %0.f, %.2f", r, g, b, option.transparency)
+									option.callback(option.color, option.transparency)
+									Library.Flags[option.flag] = {{option.color.R*255, option.color.G*255, option.color.B*255}, option.transparency}
+								else
+									ColorOutput.Text = string.format("%0.f, %0.f, %0.f", r, g, b)
+									option.callback(option.color)
+									Library.Flags[option.flag] =  {{option.color.R*255, option.color.G*255, option.color.B*255}}
+								end
+								hueconnection = Mouse.Move:Connect(function()
+									local X, Y = Mouse.X, Mouse.Y
+									local P = (Y-HUE.AbsolutePosition.Y)/HUE.AbsoluteSize.Y
+									local Calc = math.max(1, math.min(7, 
+										math.floor(((P*7+0.5)*100))/100 
+										))
+									local startC = colors[math.floor(Calc)] ; local endC = colors[math.ceil(Calc)]
+									Schema.BackgroundColor3 = startC:lerp(endC, Calc-math.floor(Calc)) or Color3.new(0, 0, 0)
+									HUE.Frame.Position = UDim2.new(0, 0, 0, math.clamp( Y - HUE.AbsolutePosition.Y, 0, HUE.AbsoluteSize.Y-1 ))
+
+									local xP, yP = (Schema.Frame.AbsolutePosition.X - Schema.AbsolutePosition.X) / Schema.AbsoluteSize.X, (Schema.Frame.AbsolutePosition.Y - Schema.AbsolutePosition.Y) / Schema.AbsoluteSize.Y
+									local Output = white:Lerp(Schema.BackgroundColor3, xP):Lerp(black, yP)
+									Display.BackgroundColor3 = Output
+									local r,g,b = math.floor((Output.R*255) + 0.5),math.floor((Output.G*255) + 0.5),math.floor((Output.B*255) + 0.5)
+									option.color = Color3.fromRGB(r,g,b)
+									addonColor.BackgroundColor3 = option.color
+									if option.transparency then
+										ColorOutput.Text = string.format("%0.f, %0.f, %0.f, %.2f", r, g, b, option.transparency)
+										option.callback(option.color, option.transparency)
+										Library.Flags[option.flag] = {{option.color.R*255, option.color.G*255, option.color.B*255}, option.transparency}
+									else
+										ColorOutput.Text = string.format("%0.f, %0.f, %0.f", r, g, b)
+										option.callback(option.color)
+										Library.Flags[option.flag] =  {{option.color.R*255, option.color.G*255, option.color.B*255}}
+									end
+								end)
+
+								huerelease = UserInputService.InputEnded:Connect(function(input, gameProcessedEvent)
+									if input.UserInputType == Enum.UserInputType.MouseButton1 then
+										if hueconnection then
+											hueconnection:Disconnect()
+											huerelease:Disconnect()
+										end
+									end
+								end)
+							end)
+
+							if option.transparency then
+								TRANS.Frame.Position = UDim2.new(0, 0, 0, (TRANS.AbsoluteSize.Y - (100 - (option.transparency*100))*1.25))
+								TRANS.MouseButton1Down:Connect(function()
+									local X, Y = Mouse.X, Mouse.Y
+									local P = (Y-HUE.AbsolutePosition.Y)/HUE.AbsoluteSize.Y
+									TRANS.Frame.Position = UDim2.new(0, 0, 0, math.clamp( Y - TRANS.AbsolutePosition.Y, 0, TRANS.AbsoluteSize.Y-1 ))
+									option.transparency = 100 - (P * 100); option.transparency = (100 -math.clamp(option.transparency, 0, 100))/100
+									Display.BackgroundTransparency = option.transparency
+									addonColor.BackgroundTransparency = option.transparency
+									local r,g,b = math.floor((option.color.R*255) + 0.5),math.floor((option.color.G*255) + 0.5),math.floor((option.color.B*255) + 0.5)
+									ColorOutput.Text = string.format("%0.f, %0.f, %0.f, %.2f", r, g, b, option.transparency)
+									option.callback(option.color, option.transparency)
+									Library.Flags[option.flag] = {{option.color.R*255, option.color.G*255, option.color.B*255}, option.transparency}
+									transconnection = Mouse.Move:Connect(function()
+										local X, Y = Mouse.X, Mouse.Y
+										local P = (Y-HUE.AbsolutePosition.Y)/HUE.AbsoluteSize.Y
+										TRANS.Frame.Position = UDim2.new(0, 0, 0, math.clamp( Y - TRANS.AbsolutePosition.Y, 0, TRANS.AbsoluteSize.Y-1 ))
+										option.transparency = 100 - (P * 100); option.transparency = (100 -math.clamp(option.transparency, 0, 100))/100
+										Display.BackgroundTransparency = option.transparency
+										addonColor.BackgroundTransparency = option.transparency
+										local r,g,b = math.floor((option.color.R*255) + 0.5),math.floor((option.color.G*255) + 0.5),math.floor((option.color.B*255) + 0.5)
+										ColorOutput.Text = string.format("%0.f, %0.f, %0.f, %.2f", r, g, b, option.transparency)
+										option.callback(option.color, option.transparency)
+										Library.Flags[option.flag] = {{option.color.R*255, option.color.G*255, option.color.B*255}, option.transparency}
+									end)
+
+									transrelease = UserInputService.InputEnded:Connect(function(k)
+										if k.UserInputType == Enum.UserInputType.MouseButton1 then
+											if transconnection then
+												transconnection:Disconnect()
+												transrelease:Disconnect()
+											end
+										end
+									end)
+								end)
+							end
+
+							addonColor.MouseButton1Click:Connect(function()
+								if ColorVal.Value == true then
+									AddonColor.Visible = false
+									ColorVal.Value = false
+								else
+									for i, v in pairs(GUI:GetDescendants()) do
+										if v:IsA("BoolValue") and v.Name == "OpenedVal" then
+											local AA = v.Parent
+											AA.Visible = false
+											v.Value = false
+											local DD = AA.Parent.Parent
+											if DD:FindFirstChild("btnDD") then
+												DD.btnDD.UIStroke.Color = Library.Theme.Border
+												DD.btnDD:FindFirstChildWhichIsA("UIStroke").Color = Library.Theme.Border
+											end
+										end
+									end
+									AddonColor.Visible = true
+									ColorVal.Value = true
+								end
+							end)
+
+							if option.flag and option.flag ~= "" then
+								if option.transparency then
+									Library.Flags[option.flag] = {{option.color.R*255, option.color.G*255, option.color.B*255}, option.transparency}
+								else
+									Library.Flags[option.flag] = {{option.color.R*255, option.color.G*255, option.color.B*255}}
+								end
+								Library.Items[option.flag] = option
+							end
+
+							function option:SetValue(clr, trs)
+								option.color = clr
+								option.transparency = trs or false
+								if option.transparency then
+									Library.Flags[option.flag] = {{option.color.R*255, option.color.G*255, option.color.B*255}, option.transparency}
+									addonColor.BackgroundTransparency = option.transparency
+									Display.BackgroundTransparency = option.transparency
+									if trs then
+										TRANS.Frame.Position = UDim2.new(0, 0, 0, (TRANS.AbsoluteSize.Y - (100 - (option.transparency*100))*1.25))
+									end
+								else
+									Library.Flags[option.flag] = option.color
+								end
+								addonColor.BackgroundColor3 = option.color
+								Display.BackgroundColor3 = option.color
+
+							end
+
+
+							local UpdateSection = SectionSize(UILLSubSection)
+							SectionBG.Size = UDim2.new(0, SectionBG.Size.X.Offset, 0, UpdateSection + 7 + UIPSubSection.PaddingTop.Offset)
+							Section.Size = SectionBG.Size + UDim2.new(0, 0, 0, 20)
+
+							local UpdateColumn = SectionSize(UILLColumn1)
+							Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 15 + UIPColumn1.PaddingTop.Offset)
+
+							return option;
+						end
 
 						return option;
 					end
@@ -2303,6 +2744,8 @@ function Library:New(properties)
 						local UIGradient = Instance.new("UIGradient")
 						local UILLtoggleAddons = Instance.new("UIListLayout")
 						local UILLColor = Instance.new("UIListLayout")
+						
+						
 
 						--Properties:
 
@@ -2384,7 +2827,7 @@ function Library:New(properties)
 
 
 						--- COCK
-
+						
 						local AddonColor = Instance.new("Frame")
 						local Display = Instance.new("Frame")
 						local ColorOutput = Instance.new("TextBox")
@@ -2560,7 +3003,9 @@ function Library:New(properties)
 							Display.BackgroundColor3 = option.color
 							Library.Flags[option.flag] = {{option.color.R*255, option.color.G*255, option.color.B*255}, option.transparency}
 						else
+							local r,g,b = math.floor((option.color.R*255) + 0.5),math.floor((option.color.G*255) + 0.5),math.floor((option.color.B*255) + 0.5)
 							Library.Flags[option.flag] =  {{option.color.R*255, option.color.G*255, option.color.B*255}}
+							ColorOutput.Text = string.format("%0.f, %0.f, %0.f", r, g, b)
 						end
 						
 						
