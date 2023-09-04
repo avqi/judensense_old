@@ -1430,7 +1430,6 @@ function Library:New(properties)
 
 						return option;
 
-						return option;
 					end
 
 					function Utilities:AddDivider(option)
