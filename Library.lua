@@ -1005,6 +1005,8 @@ function Library:New(properties)
 							addonColor.TextColor3 = Color3.fromRGB(0, 0, 0)
 							addonColor.TextSize = 14.000
 							addonColor.ZIndex = 1005
+							
+							local UIGradient = Instance.new("UIGradient")
 
 							UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(186, 186, 186))}
 							UIGradient.Rotation = 90
@@ -1421,6 +1423,12 @@ function Library:New(properties)
 
 							return option;
 						end
+						
+						local UpdateSection = SectionSize(UILLSubSection)
+						SectionBG.Size = UDim2.new(0, SectionBG.Size.X.Offset, 0, UpdateSection + 7 + UIPSubSection.PaddingTop.Offset)
+						Section.Size = SectionBG.Size + UDim2.new(0, 0, 0, 20)
+
+						return option;
 
 						return option;
 					end
@@ -2465,6 +2473,7 @@ function Library:New(properties)
 							end
 							
 							option.callback(option.value)
+							
 						end
 
 						
