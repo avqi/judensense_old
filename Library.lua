@@ -343,7 +343,6 @@ function Library:New(properties)
 				Section.BorderColor3 = Library.Theme.Border
 				Section.ClipsDescendants = false
 				Section.Position = UDim2.new(0.0192926042, 0, 0.0273348521, 0)
-				Section.Size = Section.Size + UDim2.new(0, 294, 0, 20)
 
 				UILLSection.Name = "UILLSection"
 				UILLSection.Parent = Section
@@ -407,7 +406,7 @@ function Library:New(properties)
 					SectionBG.BorderColor3 = Color3.fromRGB(0, 0, 0)
 					SectionBG.BorderSizePixel = 0
 					SectionBG.Position = UDim2.new(0, 0, 0.129870132, 0)
-					SectionBG.Size = UDim2.new(0, 294, 0, 0)
+					SectionBG.Size = UDim2.new(0, 0, 0, 0)
 					SectionBG.Visible = false
 
 					local UILLSubSection = Instance.new("UIListLayout")
@@ -445,6 +444,10 @@ function Library:New(properties)
 						local UpdateColumn = SectionSize(UILLColumn1)
 						Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 15 + UIPColumn1.PaddingTop.Offset)
 					end)
+					
+					local UpdateSection = SectionSize(UILLSubSection)
+					SectionBG.Size = UDim2.new(0, SectionBG.Size.X.Offset, 0, UpdateSection + 7 + UIPSubSection.PaddingTop.Offset)
+					Section.Size = SectionBG.Size + UDim2.new(0, 0, 0, 20)
 
 					---------------------------------------------------------- UTILITIES ----------------------------------------------------------
 
@@ -1427,6 +1430,9 @@ function Library:New(properties)
 						local UpdateSection = SectionSize(UILLSubSection)
 						SectionBG.Size = UDim2.new(0, SectionBG.Size.X.Offset, 0, UpdateSection + 7 + UIPSubSection.PaddingTop.Offset)
 						Section.Size = SectionBG.Size + UDim2.new(0, 0, 0, 20)
+						
+						local UpdateColumn = SectionSize(UILLColumn1)
+						Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 15 + UIPColumn1.PaddingTop.Offset)
 
 						return option;
 
@@ -3240,12 +3246,18 @@ function Library:New(properties)
 
 					end
 					
+					local UpdateSection = SectionSize(UILLSubSection)
+					SectionBG.Size = UDim2.new(0, SectionBG.Size.X.Offset, 0, UpdateSection + 7 + UIPSubSection.PaddingTop.Offset)
+					Section.Size = SectionBG.Size + UDim2.new(0, 0, 0, 20)
+					
 					local UpdateColumn = SectionSize(UILLColumn1)
 					Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 15 + UIPColumn1.PaddingTop.Offset)
 
 					return Utilities;
 
 				end
+				
+				
 				local UpdateColumn = SectionSize(UILLColumn1)
 				Collumn1.CanvasSize = UDim2.new(0, Collumn1.Size.X.Offset, 0, UpdateColumn + 15 + UIPColumn1.PaddingTop.Offset)
 				return SubSection;
