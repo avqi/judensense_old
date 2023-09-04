@@ -1,4 +1,4 @@
--- Sexy UI Library ngl -- Test v7
+-- Sexy UI Library ngl
 local Library = {
 	Flags = {},
 	Items = {},
@@ -343,6 +343,7 @@ function Library:New(properties)
 				Section.BorderColor3 = Library.Theme.Border
 				Section.ClipsDescendants = false
 				Section.Position = UDim2.new(0.0192926042, 0, 0.0273348521, 0)
+				Section.Size = UDim2.new(0, 294, 0, 20)
 
 				UILLSection.Name = "UILLSection"
 				UILLSection.Parent = Section
@@ -428,7 +429,6 @@ function Library:New(properties)
 						SectionBG.Visible = true
 						Section.Visible = true
 						firstSubsection = false
-						Section.Size = SectionBG.Size + UDim2.new(0, 0, 0, 20)
 					end
 
 					SectionTab.MouseButton1Click:Connect(function()
