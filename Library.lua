@@ -1883,7 +1883,7 @@ function Library:New(properties)
 						SliderText.Position = UDim2.new(0, 0, -0.0105882343, 0)
 						SliderText.Size = UDim2.new(0, 180, 0, 16)
 						SliderText.Font = Enum.Font.Jura
-						SliderText.Text = "Silly you"
+						SliderText.Text = option.text
 						SliderText.TextColor3 = Color3.fromRGB(205, 214, 244)
 						SliderText.TextSize = 14.000
 						SliderText.TextXAlignment = Enum.TextXAlignment.Left
