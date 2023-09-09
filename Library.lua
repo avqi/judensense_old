@@ -319,7 +319,7 @@ function Library:New(properties)
 
 			UIPColumn1.Name = "UIPColumn1"
 			UIPColumn1.Parent = Collumn1
-			UIPColumn1.PaddingLeft = UDim.new(0, 3)
+			UIPColumn1.PaddingLeft = UDim.new(0, 0)
 			UIPColumn1.PaddingTop = UDim.new(0, 12)
 
 			function SectionHandler:AddSection(name)
